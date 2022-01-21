@@ -4,7 +4,7 @@
 // Reactの記法で書くなら必ず必要
 // 分割代入で react.useState react.useEffectを取り出す
 import React, { useState, useEffect } from "react";
-import ColorfulMessage from "./components/ColorfulMessage";
+import { ColorfulMessage } from "./components/ColorfulMessage";
 
 const App = () => {
   console.log("最初");

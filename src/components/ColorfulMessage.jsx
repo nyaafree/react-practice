@@ -1,6 +1,6 @@
 import React from "react";
 
-const colorfulMessage = (props) => {
+export const ColorfulMessage = (props) => {
   console.log("カラーメッセージ");
   // 分割代入
   const { color, message, children } = props;
@@ -14,5 +14,3 @@ const colorfulMessage = (props) => {
     </>
   );
 };
-
-export default colorfulMessage;
