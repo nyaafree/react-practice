@@ -1,11 +1,16 @@
 // Reactの記法で書くなら必ず必要
-import React from "react";
+// 分割代入で react.useStateを取り出す
+import React, { useState } from "react";
 import ColorfulMessage from "./components/ColorfulMessage";
 
 const App = () => {
-  const onClickButton = () => {
-    alert("押されました");
+  const onClickCountUp = () => {
+    setNum(num + 1);
   };
+  // numはstateの変数名、setNumはstateを更新していく関数名
+  // useStateのは初期値を設定することができる（下の例では0）
+  // stateは各コンポーネントが持つ状態、stateが更新されると再レンダリングされる
+  const [num, setNum] = useState(0);
   // 複数行のjsxをreturnする場合は()で囲む
   // jsxは一つのタグでreturnしなければならないので
   // 以前はdivで囲っていたが、今は<></>で囲むようにしている
@@ -19,7 +24,8 @@ const App = () => {
       <h1 style={{ color: "red" }}>こんにちは</h1>
       <ColorfulMessage color="blue">お元気ですか？</ColorfulMessage>
       <ColorfulMessage color="pink" message="お元気ですよ" />
-      <button onClick={onClickButton}>ボタン</button>
+      <p>{num}</p>
+      <button onClick={onClickCountUp}>ボタン</button>
     </>
   );
 };
